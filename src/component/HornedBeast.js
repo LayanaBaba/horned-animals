@@ -31,10 +31,12 @@ render(){
                 }
             </p></Card.Title>
     <Card.Text>
+    <img src={this.props.image_url} alt={this.props.title} title={this.props.title}/> 
     <p>
                 The total votes 💚: {this.state.votes}
             </p>
     </Card.Text>
+    
     <Button onClick={this.addedVotes} variant="primary">Vote here</Button>
   </Card.Body>
   <Card.Footer className="text-muted">♥️♥️♥️♥️♥️♥️</Card.Footer>
