@@ -45,6 +45,21 @@ You can learn more in the [Create React App documentation](https://facebook.gith
 
 To learn React, check out the [React documentation](https://reactjs.org/).
 
+## Time Estimate:
+**Number and name of feature:**
+
+- Feature 1: Display images
+- Feature 2: Allow users to vote for their favorite beast
+- Feature 3: Bootstrap
+
+**Estimate of time needed to complete:** Two hours.
+
+**Start time:** 2:30 pm.
+
+**Finish time:** 5:30 pm
+
+**Actual time needed to complete:** Three hours
+
 ### Code Splitting
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)

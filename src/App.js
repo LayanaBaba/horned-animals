@@ -11,8 +11,9 @@ render(){
   return(
     <div>
       <Header/>
-      <Footer/>
-      <Main/>     
+      
+      <Main/>
+      <Footer/>     
     </div>
   )
 }
