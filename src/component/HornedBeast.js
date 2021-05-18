@@ -15,12 +15,33 @@ class HornedBeast extends React.Component{
         this.setState({
             votes:this.state.votes + 1
         });
+        this.props.increment2(this.props.title);
+    }
+
+    showInModal=()=>{
+        this.props.showInModal(this.props.title);
     }
 
 render(){
     return(
         <div>
-            <Card className="text-center">
+             <Card style={{ width: '18rem' } }>
+                    <Card.Img variant="top" src={this.props.image_url} onClick={this.showInModal} />
+                    <Card.Body>
+                        <Card.Title>{this.props.title}</Card.Title>
+                        <Card.Text>
+                        {this.props.description}
+                        
+                        </Card.Text>
+                        <Card.Text>
+                        The total votes 💚: {this.state.votes}                        
+                        </Card.Text>
+                        <Button variant="primary" onClick={this.addedVotes} >Vote here</Button>
+                        
+
+                    </Card.Body>
+                </Card>
+            {/* <Card className="text-center">
   <Card.Header><h2>
             {this.props.title}
             </h2></Card.Header>
@@ -40,7 +61,7 @@ render(){
     <Button onClick={this.addedVotes} variant="primary">Vote here</Button>
   </Card.Body>
   <Card.Footer className="text-muted">♥️♥️♥️♥️♥️♥️</Card.Footer>
-</Card>
+</Card> */}
             {/* <h2>
             {this.props.title}
             </h2>
