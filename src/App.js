@@ -7,25 +7,42 @@ import Header from './component/Header';
 import Footer from './component/Footer';
 
 import Main from './component/Main';
-import Data from './components/data.json';
-import SelectedBeast from './components/SelectedBeast.js';
+import Data from './component/data.json';
+import SelectedBeast from './component/SelectedBeast.js';
 
 class App extends React.Component {
   constructor (props) {
 
     super (props);
     this.state={
-      dataarray:Data,
+      dataArray:Data,
       show: false,
       item: {}
     }
   }
 
+  increment=(nam)=>{
+    let updatedArray=this.state.dataArray.map( element =>{
+      if (element.title==nam){
+        if (element.hasOwnProperty('votes')){
+          element.votes++;
+        }else{
+          element.votes=1;     
+        } 
+      }
+      return element;
+    }) ;
+    this.setState({dataArray:updatedArray});
+
+    
+  }
+
   showInModal= (clickedBeast)=>{
+    let targetArray=this.state.dataArray.find(item => item.title==clickedBeast)
     this.setState({
       
       show: true,
-      item: clickedBeast,
+      item: targetArray,
     })
   }
   hideInModal=()=>{
@@ -39,14 +56,21 @@ render(){
       <Header/>
       
       <Main 
-      BeastArray={this.state.dataarray}
-      handleClick={this.showInModal}
+      BeastArray={this.state.dataArray}
+      increment={this.increment}
+      showInModal={this.showInModal}
       />
 
       <SelectedBeast
+      title={this.state.item.title }
       show={this.state.show}
       hide={this.state.hideInModal}
+      description={this.state.item.description}
+      image_url={this.state.item.image_url}
       item={this.state.item}
+      handleClick={this.showInModal}
+      votes={this.state.item.votes}
+      handleClick={this.hideInModal}
       />
       <Footer/>     
     </div>
