@@ -1,11 +1,7 @@
 import React from 'react';
-
-import './App.css';
-
+// import './App.css';
 import Header from './component/Header';
-
 import Footer from './component/Footer';
-
 import Main from './component/Main';
 import Data from './component/data.json';
 import SelectedBeast from './component/SelectedBeast.js';
@@ -50,6 +46,19 @@ class App extends React.Component {
       show:false,
     })
   }
+
+  hornsFilter=(value)=>{
+    let filteredArr=Data.filter(item=>{
+      if (item.horns==value){
+        return item
+      }else if(value=='All'){
+        return item
+      }
+    });
+    this.setState({
+      dataArray:filteredArr
+    })
+  }
 render(){
   return(
     <div>
@@ -59,6 +68,7 @@ render(){
       BeastArray={this.state.dataArray}
       increment={this.increment}
       showInModal={this.showInModal}
+      hornsFilter={this.hornsFilter}
       />
 
       <SelectedBeast
