@@ -37,8 +37,8 @@ class Main extends React.Component {
                     </Form.Group>
                 </Form>
                 
-                <CardColumns>
-                    <div >
+                {/* <CardColumns> */}
+                    <div style={{display:'flex' , flexFlow:'row' , flexWrap:'wrap'}}>
                         {this.props.BeastArray.map((item, index) => {
                             return (
                                 <HornedBeast
@@ -56,7 +56,7 @@ class Main extends React.Component {
                         }
 
                     </div>
-                </CardColumns>
+                {/* </CardColumns> */}
 
 
             </>
