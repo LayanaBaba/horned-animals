@@ -17,6 +17,7 @@ class Main extends React.Component{
                             image_url={item.image_url}
                             description={item.description}
                             key={index}
+                            index={index}
                             increment2={this.props.increment}
                             showInModal={this.props.showInModal}
                             
